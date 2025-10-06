@@ -10,8 +10,11 @@ void main(){
   Stream<String> newStream = intStream.map<String>((int e) {
     return numMap[e]!;
   });
-  newStream.listen((e) {
+  var subscription = newStream.listen((e) {
     print(e);
   });
+  ///(subscription as _EventSink)底层就是可以sink.add发送数据的对象
+  print('subscription = $subscription');
+
 }
 

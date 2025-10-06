@@ -7,6 +7,6 @@ void main() {
   Future<int> reduceResult = intStream.drain(4);
   int start = DateTime.now().millisecondsSinceEpoch;
   reduceResult.then((value) {
-    print("流已结束 === ${DateTime.now().millisecondsSinceEpoch - start} ms");
+    print("$value,流已结束 === ${DateTime.now().millisecondsSinceEpoch - start} ms");
   });
 }
